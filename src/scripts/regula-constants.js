@@ -1,17 +1,16 @@
 import { loadLicense } from './load-license';
 
 let rawLicense = '';
-let REGULA_CREDENTIALS = {};
 
 loadLicense().then((base64) => {
   rawLicense = base64;
-  // regula credentials
-  REGULA_CREDENTIALS = {
-    license: rawLicense,
-  };
 });
 
-const TOKEN = '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';
+const REGULA_CREDENTIALS = {
+  license: process.env.REGULA_LICENSE,
+};
+
+const TOKEN = process.env.TOKEN;
 
 // optional, the app has default legends and colors
 const CONFIGURATION = {
