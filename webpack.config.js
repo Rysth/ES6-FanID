@@ -14,6 +14,10 @@ module.exports = {
         test: /\.css$/,
         use: ['style-loader', 'css-loader'],
       },
+      {
+        test: /\.(license)$/, // Modify the regex pattern to match your .license file(s).
+        use: 'file-loader',
+      },
     ],
   },
   plugins: [
